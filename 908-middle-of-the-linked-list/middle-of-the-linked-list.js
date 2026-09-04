@@ -9,14 +9,13 @@ var middleNode = function(head) {
     }
     let middle = Math.floor(counter / 2)+1
 
-    let count=0
     curr = head
-    let temp = 0
-     while(curr!=null && count<middle){
-       
-        count+=1
-        temp = curr
+     while(curr!=null){
+       middle= middle-1
+       if(middle==0){
+             return curr
+       }
         curr= curr.next
     }
-    return temp
+    return 0
 };
