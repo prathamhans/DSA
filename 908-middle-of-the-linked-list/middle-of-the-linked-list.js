@@ -1,21 +1,11 @@
-
 var middleNode = function(head) {
-    let counter=0
-    let curr = head
-    
-    while(curr!=null){
-        counter+=1
-        curr= curr.next
+    // let curr=head
+    let slow= head
+    let fast = head
+    while(fast!=null && fast.next!=null){
+        slow= slow.next
+        fast= fast.next.next
     }
-    let middle = Math.floor(counter / 2)+1
 
-    curr = head
-     while(curr!=null){
-       middle= middle-1
-       if(middle==0){
-             return curr
-       }
-        curr= curr.next
-    }
-    return 0
+    return slow
 };
