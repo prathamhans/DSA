@@ -8,17 +8,33 @@
 
 /**
  * @param {ListNode} head
- * @return {boolean}
- */
+ * @return {boolean}**/
+
+// var hasCycle = function(head) {
+//     let map = new Map()
+//     let temp = head
+//     while(temp!=null){
+//         if(map.has(temp)){
+//             return true
+//         }
+//         map.set(temp, 1);
+//         temp = temp.next
+//     }
+//     return false
+// };
+
+
 var hasCycle = function(head) {
-    let map = new Map()
-    let temp = head
-    while(temp!=null){
-        if(map.has(temp)){
-            return true
+    let slow = head
+    let fast = head
+    while(fast!=null && fast.next !=null){
+      
+        slow= slow.next
+        fast = fast.next.next
+
+          if(fast==slow){
+            return true 
         }
-        map.set(temp, 1);
-        temp = temp.next
     }
     return false
 };
